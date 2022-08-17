@@ -1,14 +1,15 @@
 <template>
   <div>
     <div>
-      <hello-world></hello-world>
+      <global-header></global-header>
     </div>
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script setup>
-console.log('default.vue')
+
+console.log("default.vue");
 </script>
 
 <style scoped>
