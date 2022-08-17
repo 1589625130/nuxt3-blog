@@ -15,7 +15,7 @@
 
 <script setup>
 import { ElMenu, ElMenuItem } from "element-plus";
-import { useRoute, useState } from "nuxt/app";
+import { navigateTo, useRoute, useState } from "nuxt/app";
 
 const menuList = [
   {
