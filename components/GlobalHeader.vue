@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <el-menu mode="horizontal"
-             :default-active="state.activeIndex"
+             :default-active="activeIndex"
              class="el-menu-demo"
              background-color="#545c64"
              text-color="#fff"
@@ -32,20 +32,18 @@ const menuList = [
   }
 ];
 
-const state = useState("menu", () => {
-  return { activeIndex: "" };
-});
+const activeIndex = useState("menu", () => 0);
 
 const route = useRoute();
 const routeObj = {
   index: 0,
   about: 1
 };
-state.activeIndex = routeObj[route.name];
-console.log({ state: state.activeIndex });
+activeIndex.value = routeObj[route.name];
+console.log({ activeIndex: activeIndex.value });
 
 function selectMenu(index) {
-  state.activeIndex = index;
+  activeIndex.value = index;
   navigateTo(menuList[index].path);
 }
 
